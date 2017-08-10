@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 /**
  * Created by madhur on 3/1/15.

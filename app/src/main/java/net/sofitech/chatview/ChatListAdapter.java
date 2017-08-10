@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,17 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
-import in.co.madhur.chatbubblesdemo.model.ChatMessage;
-import in.co.madhur.chatbubblesdemo.model.Status;
-import in.co.madhur.chatbubblesdemo.model.UserType;
-import in.co.madhur.chatbubblesdemo.widgets.Emoji;
+
+import net.sofitech.chatview.model.ChatMessage;
+import net.sofitech.chatview.model.Status;
+import net.sofitech.chatview.model.UserType;
+import net.sofitech.chatview.widgets.Emoji;
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
 /**
@@ -66,6 +67,8 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
 
                 holder1.messageTextView = (TextView) v.findViewById(R.id.message_text);
                 holder1.timeTextView = (TextView) v.findViewById(R.id.time_text);
+                holder1.firstlinearLayout=(LinearLayout)v.findViewById(R.id.hideLinear);
+                holder1.extra1=(TextView)v.findViewById(R.id.extraText);
 
                 v.setTag(holder1);
             } else {
@@ -74,6 +77,11 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
 
             }
 
+            if(message.getExtraMessage()!=null)
+            {
+                holder1.extra1.setText(message.getExtraMessage());
+                holder1.firstlinearLayout.setVisibility(View.VISIBLE);
+            }
             holder1.messageTextView.setText(Emoji.replaceEmoji(message.getMessageText(), holder1.messageTextView.getPaint().getFontMetricsInt(), AndroidUtilities.dp(16)));
             holder1.timeTextView.setText(SIMPLE_DATE_FORMAT.format(message.getMessageTime()));
 
@@ -84,10 +92,11 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
 
                 holder2 = new ViewHolder2();
 
-
                 holder2.messageTextView = (TextView) v.findViewById(R.id.message_text);
                 holder2.timeTextView = (TextView) v.findViewById(R.id.time_text);
                 holder2.messageStatus = (ImageView) v.findViewById(R.id.user_reply_status);
+                holder2.secondlinearLayout=(LinearLayout)v.findViewById(R.id.hideLinear);
+                holder2.extra2=(TextView)v.findViewById(R.id.extraText);
                 v.setTag(holder2);
 
             } else {
@@ -96,6 +105,11 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
 
             }
 
+            if(message.getExtraMessage()!=null)
+            {
+                holder2.extra2.setText(message.getExtraMessage());
+                holder2.secondlinearLayout.setVisibility(View.VISIBLE);
+            }
             holder2.messageTextView.setText(Emoji.replaceEmoji(message.getMessageText(), holder2.messageTextView.getPaint().getFontMetricsInt(), AndroidUtilities.dp(16) ));
             //holder2.messageTextView.setText(message.getMessageText());
             holder2.timeTextView.setText(SIMPLE_DATE_FORMAT.format(message.getMessageTime()));
@@ -195,6 +209,8 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
     private class ViewHolder1 {
         public TextView messageTextView;
         public TextView timeTextView;
+        public LinearLayout firstlinearLayout;
+        public TextView extra1;
 
 
     }
@@ -203,6 +219,8 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
         public ImageView messageStatus;
         public TextView messageTextView;
         public TextView timeTextView;
+        public LinearLayout secondlinearLayout;
+        public TextView extra2;
 
     }
 }

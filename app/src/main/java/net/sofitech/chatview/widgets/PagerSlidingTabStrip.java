@@ -1,6 +1,6 @@
 
 
-package in.co.madhur.chatbubblesdemo.widgets;
+package net.sofitech.chatview.widgets;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -25,9 +25,10 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import net.sofitech.chatview.R;
+
 import java.util.Locale;
 
-import in.co.madhur.chatbubblesdemo.R;
 
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {

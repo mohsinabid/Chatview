@@ -1,11 +1,11 @@
-<in.co.madhur.chatbubblesdemo.widgets.SizeNotifierRelativeLayout
+<net.sofitech.chatview.widgets.SizeNotifierRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/chat_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context="net.sofitech.chatview.MainActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -119,4 +119,4 @@
 
     </LinearLayout>
 
-</in.co.madhur.chatbubblesdemo.widgets.SizeNotifierRelativeLayout>
+</net.sofitech.chatview.widgets.SizeNotifierRelativeLayout>

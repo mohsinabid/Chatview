@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 import android.content.Context;
 import android.graphics.Bitmap;

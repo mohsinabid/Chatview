@@ -1,6 +1,6 @@
 
 
-package in.co.madhur.chatbubblesdemo.widgets;
+package net.sofitech.chatview.widgets;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -20,8 +20,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import in.co.madhur.chatbubblesdemo.AndroidUtilities;
-import in.co.madhur.chatbubblesdemo.R;
+import net.sofitech.chatview.AndroidUtilities;
+import net.sofitech.chatview.R;
 
 public class EmojiView extends LinearLayout {
     private ArrayList<EmojiGridAdapter> adapters = new ArrayList<EmojiGridAdapter>();

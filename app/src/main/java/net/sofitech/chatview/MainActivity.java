@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -23,9 +23,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,12 +31,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import in.co.madhur.chatbubblesdemo.model.ChatMessage;
-import in.co.madhur.chatbubblesdemo.model.Status;
-import in.co.madhur.chatbubblesdemo.model.UserType;
-import in.co.madhur.chatbubblesdemo.widgets.Emoji;
-import in.co.madhur.chatbubblesdemo.widgets.EmojiView;
-import in.co.madhur.chatbubblesdemo.widgets.SizeNotifierRelativeLayout;
+
+import net.sofitech.chatview.model.ChatMessage;
+import net.sofitech.chatview.model.Status;
+import net.sofitech.chatview.model.UserType;
+import net.sofitech.chatview.widgets.Emoji;
+import net.sofitech.chatview.widgets.EmojiView;
+import net.sofitech.chatview.widgets.SizeNotifierRelativeLayout;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 
@@ -59,6 +58,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
     View rootview;
     int current;
     TextView replying,replyText;
+    ChatMessage replyingMsg;
 
     private EditText.OnKeyListener keyListener = new View.OnKeyListener() {
         @Override
@@ -77,8 +77,6 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
                     sendMessage(editText.getText().toString(), UserType.OTHER);
                 }
 
-                replying.setVisibility(View.GONE);
-                replyText.setVisibility(View.GONE);
                 chatEditText1.setText("");
 
                 return true;
@@ -210,6 +208,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
                 replying.setVisibility(View.VISIBLE);
                 replyText.setVisibility(View.VISIBLE);
                 replyText.setText(chatMessages.get(current).getMessageText());
+                this.replyingMsg=chatMessages.get(current);
                 rootview.setBackgroundResource(0);
 
                 return true;
@@ -238,10 +237,14 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
     }
 
     private void sendMessage(final String messageText, final UserType userType) {
+        replying.setVisibility(View.GONE);
+        replyText.setVisibility(View.GONE);
         if (messageText.trim().length() == 0)
             return;
 
         final ChatMessage message = new ChatMessage();
+        if(this.replyingMsg!=null)
+            message.setExtraMessage(this.replyingMsg.getMessageText());
         message.setMessageStatus(Status.SENT);
         message.setMessageText(messageText);
         message.setUserType(userType);
@@ -269,6 +272,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
 
                 MainActivity.this.runOnUiThread(new Runnable() {
                     public void run() {
+                        replyingMsg = null;
                         listAdapter.notifyDataSetChanged();
                     }
                 });

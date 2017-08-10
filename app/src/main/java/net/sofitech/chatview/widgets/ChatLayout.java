@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo.widgets;
+package net.sofitech.chatview.widgets;
 
 import android.content.Context;
 import android.content.res.Resources;

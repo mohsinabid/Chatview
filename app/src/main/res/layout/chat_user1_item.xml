@@ -30,6 +30,31 @@
                 android:text="User1"
                 android:textSize="16sp" />
 
+            <LinearLayout
+                android:visibility="gone"
+                android:paddingLeft="20dp"
+                android:paddingRight="8dp"
+                android:id="@+id/hideLinear"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp">
+
+                <TextView
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:id="@+id/extraText"
+                    style="@style/chat_text_message_style"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="he wants." />
+                <View
+                    android:background="#000"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/message_text"
                 android:layout_width="wrap_content"
@@ -37,7 +62,6 @@
                 android:layout_centerVertical="true"
                 style="@style/chat_text_message_style"
                 android:paddingLeft="20dp"
-
                 android:autoLink="web"
                 android:maxWidth="280dp"
                 android:text="Rahul Agrawal is a good boy but he does not know what he wants." />

@@ -1,12 +1,12 @@
 
-package in.co.madhur.chatbubblesdemo.widgets;
+package net.sofitech.chatview.widgets;
 
 import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import in.co.madhur.chatbubblesdemo.AndroidUtilities;
+import net.sofitech.chatview.AndroidUtilities;
 
 
 public class SizeNotifierRelativeLayout extends RelativeLayout {

@@ -1,4 +1,4 @@
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 import android.app.Application;
 import android.os.Handler;

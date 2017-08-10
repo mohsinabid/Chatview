@@ -1,6 +1,6 @@
 
 
-package in.co.madhur.chatbubblesdemo;
+package net.sofitech.chatview;
 
 import java.util.ArrayList;
 import java.util.HashMap;

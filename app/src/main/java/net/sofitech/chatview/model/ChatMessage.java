@@ -1,13 +1,14 @@
-package in.co.madhur.chatbubblesdemo.model;
+package net.sofitech.chatview.model;
 
 /**
  * Created by madhur on 17/01/15.
  */
 public class ChatMessage {
 
-    private String messageText;
+    private String messageText,extraMessage=null;
     private UserType userType;
     private Status messageStatus;
+
 
     public long getMessageTime() {
         return messageTime;
@@ -18,6 +19,14 @@ public class ChatMessage {
     }
 
     private long messageTime;
+
+    public String getExtraMessage() {
+        return extraMessage;
+    }
+
+    public void setExtraMessage(String extraMessage) {
+        this.extraMessage = extraMessage;
+    }
 
     public void setMessageText(String messageText) {
         this.messageText = messageText;
@@ -32,7 +41,6 @@ public class ChatMessage {
     }
 
     public String getMessageText() {
-
         return messageText;
     }
 
