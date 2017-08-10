@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:background="@drawable/bubble_circle"
+    android:orientation="vertical"
+    android:layout_height="300dp"
+    android:padding="20dp"
+    android:layout_marginLeft="15dp"
+    >
+
+    <LinearLayout
+        android:layout_weight="90"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/document"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/camera"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/gallery"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="90"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center|top"
+            android:text="Document"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center|top"
+            android:text="Camera"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center|top"
+            android:text="Gallery"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_weight="90"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/music"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/google"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/phonebook"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="90"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center|top"
+            android:text="Audio"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center|top"
+            android:text="Location"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center|top"
+            android:text="Contact"
+            android:textColor="#737373"
+            android:layout_weight="30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
