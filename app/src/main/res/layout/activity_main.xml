@@ -23,16 +23,6 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
-        android:choiceMode="singleChoice"
-        android:id="@+id/chat_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottomlayout"
-        android:divider="@drawable/chat_divider"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:scrollbarStyle="outsideOverlay"></se.emilsjolander.stickylistheaders.StickyListHeadersListView>
 
 
     <LinearLayout
@@ -98,5 +88,20 @@
 
 
     </LinearLayout>
+
+    <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+        android:layout_below="@+id/toolbar"
+        android:choiceMode="singleChoice"
+        android:id="@+id/chat_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomlayout"
+        android:divider="@drawable/chat_divider"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:scrollbarStyle="outsideOverlay">
+
+    </se.emilsjolander.stickylistheaders.StickyListHeadersListView>
+
 
 </net.sofitech.chatview.widgets.SizeNotifierRelativeLayout>
