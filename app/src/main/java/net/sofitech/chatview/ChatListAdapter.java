@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 
 import net.sofitech.chatview.model.ChatMessage;
@@ -177,6 +178,21 @@ public class ChatListAdapter extends BaseAdapter implements StickyListHeadersAda
         // Create a calendar object that will convert the date and time value in milliseconds to date.
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(time);
+
+        if(calendar.get(Calendar.DAY_OF_YEAR)==Calendar.getInstance().get(Calendar.DAY_OF_YEAR))
+        {
+            return "Today";
+        }
+
+        Calendar yesterday = Calendar.getInstance();
+        Date d = new Date(System.currentTimeMillis() - (1000*60*60*24));
+        yesterday.setTime(d);
+
+        if ((calendar.get(Calendar.DAY_OF_YEAR) == ( yesterday.get(Calendar.DAY_OF_YEAR) )))
+        {
+            return "Yesterday";
+        }
+
         return formatter.format(calendar.getTime());
 
     }
