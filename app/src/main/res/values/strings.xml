@@ -4,5 +4,6 @@
     <string name="app_name">Chat Starter</string>
     <string name="type_your_message">Enter msg</string>
     <string name="NoRecent">No recent</string>
+    <string name="google_maps_key">AIzaSyBLLQzV06iKC1GD_V8XLI9z3jKw3b5bUY8</string>
 
 </resources>

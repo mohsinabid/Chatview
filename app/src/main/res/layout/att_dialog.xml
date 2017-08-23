@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<io.codetail.widget.RevealFrameLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+<LinearLayout
     android:layout_width="300dp"
-    android:background="@drawable/bubble_circle"
-    android:layout_height="300dp"
     android:orientation="vertical"
+    android:layout_height="match_parent"
+
     android:padding="20dp"
-    android:layout_marginLeft="15dp"
+    android:background="@drawable/bubble_circle"
+    android:id="@+id/dialog"
+
     >
 
     <LinearLayout
-        android:weightSum="90"
+        android:layout_weight="90"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/document"
             android:src="@drawable/document"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/camera"
             android:src="@drawable/camera"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/gallery"
             android:src="@drawable/gallery"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
 
-
     </LinearLayout>
 
-
     <LinearLayout
-        android:weightSum="90"
+        android:layout_weight="90"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:gravity="center"
+            android:gravity="center|top"
             android:text="Document"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <TextView
+            android:gravity="center|top"
             android:text="Camera"
-            android:gravity="center"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <TextView
+            android:gravity="center|top"
             android:text="Gallery"
-            android:gravity="center"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -63,22 +75,25 @@
 
 
     <LinearLayout
-        android:weightSum="90"
+        android:layout_weight="90"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/audio"
             android:src="@drawable/music"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/location"
             android:src="@drawable/google"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/contact"
             android:src="@drawable/phonebook"
             android:layout_weight="30"
             android:layout_width="0dp"
@@ -87,28 +102,30 @@
 
     </LinearLayout>
 
-
     <LinearLayout
-        android:weightSum="90"
+        android:layout_weight="90"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:gravity="center"
+            android:gravity="center|top"
             android:text="Audio"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <TextView
+            android:gravity="center|top"
             android:text="Location"
-            android:gravity="center"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
         <TextView
+            android:gravity="center|top"
             android:text="Contact"
-            android:gravity="center"
+            android:textColor="#737373"
             android:layout_weight="30"
             android:layout_width="0dp"
             android:layout_height="wrap_content" />
@@ -116,3 +133,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</io.codetail.widget.RevealFrameLayout>
