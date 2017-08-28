@@ -14,12 +14,13 @@ A sample Android App which can be used for a chat application.
 #Screenshots
 
 <p align="center">
-<img src="images/HEADER.png">
+<img src="images/HEADER.png" width=50%>
 </p>
 
 <p align="center">
-<img src="images/HEADER2.png">
+<img src="images/HEADER2.png" width=50%>
 </p>
+
 <p align="center">
-<img src="images/HEADER3.png">
+<img src="images/HEADER3.png" width=50%>
 </p>
