@@ -6,7 +6,7 @@
     android:layout_height="50dp"
     android:background="#4f4e53"
     android:elevation="6dp"
-    android:visibility="invisible"
+    android:visibility="visible"
     android:minHeight="?actionBarSize"
     android:transitionName="actionBar"
     app:contentInsetStart="25dp"
