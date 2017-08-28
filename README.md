@@ -14,13 +14,8 @@ A sample Android App which can be used for a chat application.
 #Screenshots
 
 <p >
-<img src="images/HEADER.png" width="50">
+<img src="images/HEADER.png" width="200">
+<img src="images/HEADER1.png" width="200">
+<img src="images/HEADER2.png" width="200">
 </p>
 
-<p >
-<img src="images/HEADER1.png" width="50">
-</p>
-
-<p >
-<img src="images/HEADER2.png" width="50">
-</p>
