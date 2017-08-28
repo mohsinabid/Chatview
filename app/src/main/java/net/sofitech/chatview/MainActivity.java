@@ -13,18 +13,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.ContactsContract;
-import android.provider.OpenableColumns;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -49,11 +44,15 @@ import android.widget.Toast;
 
 import com.esafirm.imagepicker.features.ImagePicker;
 import com.esafirm.imagepicker.model.Image;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.greysonparrelli.permiso.Permiso;
+
+import net.sofitech.chatview.model.*;
+import net.sofitech.chatview.widgets.Emoji;
+import net.sofitech.chatview.widgets.EmojiView;
+import net.sofitech.chatview.widgets.MapsMarkerActivity;
+import net.sofitech.chatview.widgets.SizeNotifierRelativeLayout;
 
 import java.io.File;
 import java.io.IOException;
@@ -64,21 +63,11 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-
-import net.sofitech.chatview.model.ChatMessage;
-import net.sofitech.chatview.model.Status;
-import net.sofitech.chatview.model.UserType;
-import net.sofitech.chatview.widgets.Emoji;
-import net.sofitech.chatview.widgets.EmojiView;
-import net.sofitech.chatview.widgets.MapsMarkerActivity;
-import net.sofitech.chatview.widgets.SizeNotifierRelativeLayout;
-
-
 import io.codetail.animation.SupportAnimator;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 
-public class MainActivity extends ActionBarActivity implements SizeNotifierRelativeLayout.SizeNotifierRelativeLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
+public class MainActivity extends AppCompatActivity implements SizeNotifierRelativeLayout.SizeNotifierRelativeLayoutDelegate, NotificationCenter.NotificationCenterDelegate {
 
     //    private ListView chatListView;
     private StickyListHeadersListView chatListView;
@@ -113,6 +102,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
     double lat,lng;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    public static ArrayList<net.sofitech.chatview.model.Location> sendLocation;
 
     @NonNull
     private ArrayList<Image> images = new ArrayList<>();
@@ -204,6 +194,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
         AndroidUtilities.statusBarHeight = getStatusBarHeight();
 
         chatMessages = new ArrayList<>();
+        sendLocation= new ArrayList<>();
         Permiso.getInstance().setActivity(getActivity());
 
 
@@ -341,7 +332,7 @@ public class MainActivity extends ActionBarActivity implements SizeNotifierRelat
         final LinearLayout layout=(LinearLayout)dlg.findViewById(R.id.dialog);
 
         wlp.gravity = Gravity.BOTTOM;
-        wlp.verticalMargin = 0.15f;
+        wlp.verticalMargin = 0.12f;
         wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         wlp.width = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(wlp);
