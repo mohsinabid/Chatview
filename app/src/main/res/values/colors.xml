@@ -7,4 +7,9 @@
     <color name="transparent">@android:color/transparent</color>
     <color name="orange">@android:color/holo_blue_light</color>
     <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="activated_color">#E8E8E8</color>
+
 </resources>
